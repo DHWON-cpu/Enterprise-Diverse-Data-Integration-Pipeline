@@ -1,0 +1,2 @@
+# Enterprise-Diverse-Data-Integration-Pipeline
+Built an enterprise-level data integration pipeline using Python and  SQL Server to process heterogeneous data sources, including flat files, image metadata, and large-scale datasets. Applied staged ETL/ELT workflows, data cleansing, normalization, and reusable Star/Snowflake Schema designs to ensure scalable analytics, data integrity, 
