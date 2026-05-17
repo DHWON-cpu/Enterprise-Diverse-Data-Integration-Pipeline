@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mermaid Diagram</title>
+  </head>
+  <body>
+	<!-- Do not change anything before this line -->
+	<div class="mermaid">
+---
+title: CST2112 Group Assignment ERD
+---
+erDiagram
+
+    ga3_image_master {
+
+        INT image_id PK
+
+        VARCHAR file_name
+
+        CHAR sha256
+
+        BIGINT file_size_bytes
+
+        VARCHAR image_format
+
+        DATETIME datetime
+
+    }
+
+
+
+    ga3_image_lookup {
+
+        INT metadata_id PK
+
+        INT image_id FK
+
+        INT width
+
+        INT height
+
+        INT exifoffset
+
+        VARCHAR gpsinfo
+
+        VARCHAR imagedescription
+
+        VARCHAR make
+
+        VARCHAR model
+
+        INT orientation
+
+        INT resolutionunit
+
+        VARCHAR software
+
+        VARCHAR xresolution
+
+        INT ycbcrpositioning
+
+        VARCHAR yresolution
+
+        VARCHAR relative_path
+
+    }
+
+
+
+    ga3_image_master ||--o{ ga3_image_lookup : has</div>
+	<!-- Do not change anything after this line -->
+    <script type="module">
+      import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+      mermaid.initialize({
+        startOnLoad: true
+      });
+    </script>
+  </body>
+</html>

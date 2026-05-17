@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mermaid Diagram</title>
+  </head>
+  <body>
+	<!-- Do not change anything before this line -->
+	<div class="mermaid">
+---
+title: CST2112 Group Assignment ERD
+---
+ erDiagram
+
+    ga5_master {
+
+        INT master_id PK
+
+        VARCHAR addr_guid
+
+        VARCHAR loc_guid
+
+        VARCHAR BU_USE
+
+        DECIMAL BG_X
+
+        DECIMAL BG_Y
+
+    }
+
+
+
+    ga5_lookup_civic {
+
+        INT civic_id PK
+
+        INT master_id FK
+
+        VARCHAR civic_no
+
+        VARCHAR civic_no_suffix
+
+        VARCHAR official_street_name
+
+        VARCHAR official_street_type
+
+        VARCHAR official_street_dir
+
+        VARCHAR apt_no_label
+
+    }
+
+
+
+    ga5_lookup_mail {
+
+        INT mail_id PK
+
+        INT master_id FK
+
+        VARCHAR mail_street_name
+
+        VARCHAR mail_street_type
+
+        VARCHAR mail_street_dir
+
+        VARCHAR mail_mun_name
+
+        VARCHAR mail_postal_code
+
+        VARCHAR mail_prov_abvn
+
+        VARCHAR bu_n_civic_add
+
+    }
+
+
+
+    ga5_lookup_census {
+
+        INT census_id PK
+
+        INT master_id FK
+
+        INT prov_code
+
+        VARCHAR csd_eng_name
+
+        VARCHAR csd_fre_name
+
+        VARCHAR csd_type_eng_code
+
+        VARCHAR csd_type_fre_code
+
+    }
+
+
+
+    ga5_lookup_dls {
+
+        INT dls_id PK
+
+        INT master_id FK
+
+        VARCHAR bg_dls_lsd
+
+        VARCHAR bg_dls_qtr
+
+        VARCHAR bg_dls_sctn
+
+        VARCHAR bg_dls_twnshp
+
+        VARCHAR bg_dls_rng
+
+        VARCHAR bg_dls_mrd
+
+    }
+
+
+
+    ga5_master ||--o{ ga5_lookup_civic : has
+
+    ga5_master ||--o{ ga5_lookup_mail : has
+
+    ga5_master ||--o{ ga5_lookup_census : has
+
+    ga5_master ||--o{ ga5_lookup_dls : has	</div>
+	<!-- Do not change anything after this line -->
+    <script type="module">
+      import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+      mermaid.initialize({
+        startOnLoad: true
+      });
+    </script>
+  </body>
+</html>
