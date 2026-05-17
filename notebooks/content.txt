@@ -1,0 +1,1 @@
+* * Developed Python-based data loading scripts to import large-scale CSV flat files into Microsoft SQL Server and MySQL databases, supporting automated staging, validation, and batch-processing workflows for enterprise data integration.
